@@ -7,6 +7,7 @@ class Poll(models.Model):
 
     def __str__(self):
         return self.subject
+        
 class Option(models.Model):
     title = models.CharField("選項標題", max_length=50)
     count = models.IntegerField("票數")
