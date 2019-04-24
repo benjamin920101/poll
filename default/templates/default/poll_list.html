@@ -3,28 +3,11 @@
 {% block content %}
 <h1>投票主題列表</h1>
 
+<a href="create/">新增投票主題</a>
+
 {% for item in poll_list %}
-    <div>{{item.date_created}}<a href="{{ item.id }}">{{ item.subject }}</a></div>
+    <div>{{item.date_created}}<a href="{{ item.id }}">{{ item.subject }}</a>  <a href="{{ item.id }}/update/">修改</a></div>
 {% endfor %}
 {% endblock %}
 
 {% block page_title %}主題列表{% endblock %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<h1>default/poll_list.html</h1>
-
-{% for item in poll_list %}
-    <div>{{ item.subject }}</div>
-{% endfor %}
-</body>
-</html>
-
-

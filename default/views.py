@@ -26,3 +26,13 @@ class PollVote(RedirectView):
         return '/poll/{}/'.format(item.poll_id)
         #return '/poll/'+str(item.poll_id)+'/'
 
+class PollCreate(CreateView):
+    model = Poll
+    fields = ['subject']
+    success_url = '/poll/'
+    #template_name =
+
+class PollUpdate(UpdateView):
+    model = Poll
+    fields = ['subject']
+    success_url = '/poll/'
