@@ -2,11 +2,14 @@
 
 {% block content %}
 <h1>檢視投票主題: {{ poll.subject }}</h1>
+<a href="/option/create/{{poll.id}}/">新增投票主題</a>
 {{ poll }}
 <ul>
     {% for item in options %}
-    <li><a href= "/vote/{{ item.id }}">{{ item.title }}</a> : {{ item.count }} 票</li>
+    <li>
+        <a href="/vote/{{ item.id }}">{{ item.title }}</a> : {{ item.count }} 票</li>
+    <a href="/option/{{item.id}}/update/">修改</a>
+    <a href="/option/{{item.id}}/delete/">刪除</a>
     {% endfor %}
-{{ options }}
 </ul>
 {% endblock %}
