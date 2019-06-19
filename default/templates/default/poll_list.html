@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>投票主題列表</h1>
+<h1>投票選項列表</h1>
 
-<a href="create/">新增投票主題</a>
+<a href="create/">新增投票選項</a>
 
 {% for item in poll_list %}
     <div>{{item.date_created}}<a href="{{ item.id }}/">{{ item.subject }}</a>
